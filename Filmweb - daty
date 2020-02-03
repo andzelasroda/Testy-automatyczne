@@ -1,0 +1,17 @@
+# Kod automatyczny sprawdzający filtrowanie wyników za pomocą dat
+
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver = webdriver.Chrome()
+driver.get('https://www.filmweb.pl/')
+driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/div[3]/button").click()
+driver.find_element_by_xpath("/html/body/div[1]/header/div[2]/div[2]/button").click()
+driver.find_element_by_xpath('//*[@id="inputSearch"]').send_keys("Joker",Keys.ENTER)
+driver.find_element_by_xpath('//*[@id="site"]/div[3]/div/section[1]/div/div[2]/header/div/div/ul/li[2]/a').click()
+driver.find_element_by_xpath('//*[@id="site"]/div[3]/div/section[1]/div[2]/div/button/span').click()
+driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/section[1]/div[2]/form/div/div/div[3]/div[3]/button").click()
+driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/section[1]/div[2]/form/div/div/div[3]/div[3]/div/div[1]/div[2]/input").send_keys("2020",Keys.ENTER)
+driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/section[1]/div[2]/form/div/div/div[3]/div[3]/div/div[1]/div[2]/input").send_keys("2019",Keys.ENTER)
+driver.find_element_by_xpath("/html/body/div[2]/div[3]/div/section[1]/div[2]/form/div/div/div[3]/div[3]/div/div[3]/a[1]").click()
+driver.quit()
